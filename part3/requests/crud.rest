@@ -1,0 +1,31 @@
+GET http://localhost:3001/api/notes
+
+###
+
+GET http://localhost:3001/info
+
+###
+
+GET http://localhost:3001/api/persons
+
+###
+
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+ 
+{
+    "id": "4",
+    "content": "New Note from Rest Client",
+    "important": false
+}
+
+###
+
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "id": "5",
+    "name": "Saksham",
+    "number": "123-4567890"
+}
