@@ -1,12 +1,17 @@
 // const http = require('http');
 const express = require('express');
+const morgan = require('morgan');
+
 let notes = require('./data/notes');
 let persons = require('./data/persons');
 const app = express();
 
 app.use(express.json());
 
-
+// Morgan - log
+app.use(morgan('dev'));
+morgan.token('body', (req,res) => JSON.stringify(req.body));
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'));
 
 // const app = http.createServer((req, res) => {
 //     res.writeHead(200, {'content-type': 'application/json'})
